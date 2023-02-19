@@ -1,14 +1,23 @@
 from flask import Flask, request, jsonify, render_template
+# from flask_caching import Cache # Allows Cacheing
+
+# config = {
+#     "CACHE_TYPE": "SimpleCache",  # Flask-Caching related configs
+#     "CACHE_DEFAULT_TIMEOUT": 300
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello():
-	return "Hello World!"
+# # set a 'SECRET_KEY' to enable the Flask session cookies
+# app.config['SECRET_KEY'] = '<replace with a secret key>'
 
-@app.route('/jinja2test')
-def jinja2test():
+@app.route('/')
+def coming_soon():
+    return render_template('coming_soon.html')
+
+@app.route('/index')
+def index():
     return render_template('index.html')
+
 
 @app.route('/cache-me')
 def cache():
