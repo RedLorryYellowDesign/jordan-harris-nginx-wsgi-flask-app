@@ -1,0 +1,33 @@
+Portfolio Showcase
+    Archietcture
+        Built Scheemes
+        1:Universty of Kent School of Medicen
+        2:COCO Project
+        3:
+        4:
+        5:
+        6:Longcross -- Possible
+
+        BIM
+        Dynamo
+        Famalies
+
+
+        Academic
+        1:
+        2
+        3
+
+    Web
+        1:Social Media App
+            # Django #HTML/CSS
+        2:My Digital Portfolio
+
+    DataSciance
+        1:Energy.app
+            #Streamlit #Google Cloud
+        2:Olist
+        3:Hale Pretty Maps
+
+    Product Design
+        1:Pangolin Project

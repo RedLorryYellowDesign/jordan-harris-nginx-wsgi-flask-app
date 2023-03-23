@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 # from flask_caching import Cache # Allows Cacheing
+# from flask_sqlalchemy import SQLAlchemy
 
 # config = {
 #     "CACHE_TYPE": "SimpleCache",  # Flask-Caching related configs
@@ -38,3 +39,17 @@ def info():
 @app.route('/flask-health-check')
 def flask_health_check():
 	return "success"
+
+
+
+
+
+
+# # create the extension
+# db = SQLAlchemy()
+# # create the app
+# app = Flask(__name__)
+# # configure the SQLite database, relative to the app instance folder
+# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
+# # initialize the app with the extension
+# db.init_app(app)
