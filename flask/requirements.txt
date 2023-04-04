@@ -1,3 +1,6 @@
-Flask==2.2.3
-gunicorn==20.0.4
-Flask-SQLAlchemy==3.0.3
+# flask_bootstrap
+Flask
+gunicorn
+Flask-Admin
+Flask-SQLAlchemy
+Flask-Login>=0.3.0
