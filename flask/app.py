@@ -9,10 +9,7 @@ import flask_login as login
 from flask_admin.contrib import sqla
 from flask_admin import helpers, expose
 from werkzeug.security import generate_password_hash, check_password_hash
-from education import Education
 # from admin import admin
-
-
 
 
 # Create Flask application
@@ -20,7 +17,6 @@ app = Flask(__name__)
 
 # Create dummy secrey key so we can use sessions
 app.config['SECRET_KEY'] = '123456790'
-
 # Create in-memory database
 app.config['DATABASE_FILE'] = 'sample_db.sqlite'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + app.config['DATABASE_FILE']
@@ -166,8 +162,8 @@ class MyAdminIndexView(admin.AdminIndexView):
 class MyInfo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), unique=True)
-    born = db.Column(db.String(80), unique=True)
-    tagline = db.Column(db.String(80), unique=True)
+    born = db.Column(db.Integer, unique=True)
+    tag_line = db.Column(db.String(80), unique=True)
     phone = db.Column(db.String(80), unique=True)
     email = db.Column(db.String(120))
     linkedin = db.Column(db.String(64))
@@ -180,9 +176,6 @@ class MyInfo(db.Model):
         return f"MyInfo('{self.phone}')"
 
 
-
-
-
 class InternshipMentoring(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     employer = db.Column(db.String(100), unique=False, nullable=True)
@@ -193,23 +186,21 @@ class InternshipMentoring(db.Model):
     year_of_start = db.Column(db.Integer, nullable=True)
 
     def __repr__(self):
-        return f"Employment('{self.employer}','{self.role}')"
+        return f"InternshipMentoring('{self.employer}','{self.role}')"
 
 
 class Education(db.Model):
-        id = db.Column(db.Integer, primary_key=True)
-        school = db.Column(db.String(100), unique=False, nullable=True)
-        course = db.Column(db.String(500), unique=False, nullable=True)
-        role_bio = db.Column(db.Text, nullable=True)
-        key_points = db.Column(db.Text, nullable=True)
-        year_of_study = db.Column(db.Integer, nullable=True)
-        year_of_start = db.Column(db.Integer, nullable=True)
+    id = db.Column(db.Integer, primary_key=True)
+    school = db.Column(db.String(100), unique=False, nullable=True)
+    course = db.Column(db.String(500), unique=False, nullable=True)
+    role_bio = db.Column(db.Text, nullable=True)
+    key_points = db.Column(db.Text, nullable=True)
+    year_of_study = db.Column(db.Integer, nullable=True)
+    year_of_start = db.Column(db.Integer, nullable=True)
 
     def __repr__(self):
         return f"Education('{self.school}','{self.course}')"
 
-
-
 class Employment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     employer = db.Column(db.String(100), unique=False, nullable=True)
@@ -223,21 +214,11 @@ class Employment(db.Model):
         return f"Employment('{self.employer}','{self.role}')"
 
 
-
-
-class Employment(db.Model):
+class Certifications(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    employer = db.Column(db.String(100), unique=False, nullable=True)
-    role = db.Column(db.String(500), unique=False, nullable=True)
-    role_bio = db.Column(db.Text, nullable=True)
-    key_points = db.Column(db.Text, nullable=True)
-    year_of_study = db.Column(db.Integer, nullable=True)
-    year_of_start = db.Column(db.Integer, nullable=True)
-
-    def __repr__(self):
-        return f"Employment('{self.employer}','{self.role}')"
-
-
+    cert_name = db.Column(db.String(100), unique=False, nullable=False)
+    year_of_start = db.Column(db.String(100), unique=False, nullable=True)
+    year_of_finish = db.Column(db.String(100), unique=False, nullable=True)
 
 class Projects(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -245,10 +226,9 @@ class Projects(db.Model):
     image_file = db.Column(db.String(20), unique=False, nullable=False, default='default.jpg')
     about = db.Column(db.Text, unique=False, nullable=True)
 
+
     def __repr__(self):
         return f"Projects('{self.project_name}')"
-
-
 
 
 # Flask views
@@ -257,7 +237,7 @@ def index():
     education = Education
     employment = Employment
     myinfo = MyInfo
-    return render_template('index2.html',education = education.query.all(),myinfo = myinfo.query.all(), employment = employment.query.all())
+    return render_template('index.html',education = education.query.all(),myinfo = myinfo.query.all(), employment = employment.query.all())
 
 # Initialize flask-login
 init_login()
@@ -271,6 +251,9 @@ admin.add_view(MyModelView(Education, db.session))
 admin.add_view(MyModelView(Projects, db.session))
 admin.add_view(MyModelView(Employment, db.session))
 admin.add_view(MyModelView(MyInfo, db.session))
+admin.add_view(MyModelView(InternshipMentoring, db.session))
+admin.add_view(MyModelView(Certifications
+, db.session))
 
 @app.route('/build', methods=('GET', 'POST'))
 def build_sample_db():
