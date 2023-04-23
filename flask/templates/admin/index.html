@@ -2,22 +2,21 @@
 {% block body %}
 {{ super() }}
 <div class="row-fluid">
-
-    <div>
+<div>
         {% if current_user.is_authenticated %}
         <h1>Jordan Harris Website Admin</h1>
-        <p class="lead">
+<p class="lead">
             Authentication
         </p>
-        <p>
+<p>
             This example shows how you can use Flask-Login for authentication. It is only intended as a basic demonstration.
         </p>
         {% else %}
-        <form method="POST" action="">
+        <form action="" method="POST">
             {{ form.hidden_tag() if form.hidden_tag }}
             {% for f in form if f.type != 'CSRFTokenField' %}
             <div class="form-group">
-            {{ f.label }}<br>
+            {{ f.label }}<br/>
             {{ f }}
             {% if f.errors %}
             <ul>
@@ -29,11 +28,10 @@
             </div>
             {% endfor %}
             <button class="btn btn-primary" type="submit">Submit</button>
-        </form>
+</form>
         {{ link | safe }}
         {% endif %}
     </div>
-
-    <a class="btn btn-primary" href="/"><i class="icon-arrow-left icon-white"></i> Back</a>
+<a class="btn btn-primary" href="{{ url_for('{{ url_for('/') }}') }}"><i class="icon-arrow-left icon-white"></i> Back</a>
 </div>
 {% endblock body %}
