@@ -102,7 +102,6 @@ class MyModelView(sqla.ModelView):
     def is_accessible(self):
         return login.current_user.is_authenticated
 
-
 # Create customized index view class that handles login & registration
 class MyAdminIndexView(admin.AdminIndexView):
 
@@ -174,7 +173,6 @@ class MyInfo(db.Model):
 
     def __repr__(self):
         return f"MyInfo('{self.phone}')"
-
 
 class InternshipMentoring(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -290,17 +288,14 @@ def build_sample_db():
     return "pingpong"
 
 
+# if __name__ == '__main__':
 
+#     # Build a sample db on the fly, if one does not exist yet.
+#     app_dir = os.path.realpath(os.path.dirname(__file__))
+#     database_path = os.path.join(app_dir, app.config['DATABASE_FILE'])
+#     if not os.path.exists(database_path):
+#         with app.app_context():
+#             build_sample_db()
 
-
-if __name__ == '__main__':
-
-    # Build a sample db on the fly, if one does not exist yet.
-    app_dir = os.path.realpath(os.path.dirname(__file__))
-    database_path = os.path.join(app_dir, app.config['DATABASE_FILE'])
-    if not os.path.exists(database_path):
-        with app.app_context():
-            build_sample_db()
-
-    #Start app
-    app.run(debug=True)
+#     #Start app
+#     app.run(debug=True)
