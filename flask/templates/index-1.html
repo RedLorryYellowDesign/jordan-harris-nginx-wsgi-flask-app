@@ -4,25 +4,19 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
-<title>Jordan Harris's Desing Portfolio</title>
-<link href="{{ url_for('static', filename='/img/JH-image.jpg') }}" rel="icon" sizes="1080x1080" type="image/jpeg"/>
-<link href="{{ url_for('static', filename='/img/JH-image.jpg') }}" rel="icon" sizes="1080x1080" type="image/jpeg"/>
-<link href="{{ url_for('static', filename='/img/JH-image.jpg') }}" rel="icon" sizes="1080x1080" type="image/jpeg"/>
-<link href="{{ url_for('static', filename='/img/JH-image.jpg') }}" rel="icon" sizes="1080x1080" type="image/jpeg"/>
-<link href="{{ url_for('static', filename='/img/JH-image.jpg') }}" rel="icon" sizes="1080x1080" type="image/jpeg"/>
-<link href="{{ url_for('static', filename='/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"/>
-<link href="{{ url_for('manifest.json') }}" rel="manifest"/>
+<title>Porfolio Design Colour Cards</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <link href="{{ url_for('static', filename='/css/Poppins.css') }}" rel="stylesheet"/>
 <link href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet"/>
 <link href="{{ url_for('static', filename='/css/Contact-Details-icons.css') }}" rel="stylesheet"/>
 <link href="{{ url_for('static', filename='/css/Projects-Grid-images.css') }}" rel="stylesheet"/>
 <link href="{{ url_for('static', filename='/css/styles.css') }}" rel="stylesheet"/>
 </head>
-<body class="d-flex d-xxl-flex justify-content-center align-items-center justify-content-xl-center justify-content-xxl-center align-items-xxl-center" style='height: 100vh;width: 100vw;background: url("assets/img/Background.jpg") center / cover no-repeat;'>
+<body class="d-flex d-xxl-flex justify-content-center align-items-center justify-content-xl-center justify-content-xxl-center align-items-xxl-center" style="height: 100vh;width: 100vw;">
 <div class="card" style="width: 90%;background: rgba(255,255,255,0);height: 90%;opacity: 1;font-family: Poppins, sans-serif;max-width: 600px;border-style: none;">
 <div class="card-body" style="list-style-type: none;position: relative;overflow: scroll;border-radius: 40px;background: rgba(255,255,255,0.4);border-width: 3px;border-style: solid;margin-bottom: 20px;box-shadow: 0px 0px 20px 0px;">
 <div class="tab-content">
-<div class="tab-pane fade" id="about">
+<div class="tab-pane fade show active" id="about">
 <div class="d-flex flex-column justify-content-center align-items-center"><img class="shadow fit-cover rounded-circle" src="{{ url_for('static', filename='/img/JH-image.jpg') }}" style="margin-bottom: 20px;border-width: 3px;" width="30%"/>
 <div>
 <h1 class="d-xxl-flex justify-content-xxl-center"><strong><span style="color: rgb(43, 44, 72);">Jordan Harris</span></strong></h1>
@@ -31,104 +25,9 @@
 </div>
 <h6><strong><span style="color: rgb(43, 44, 72); background-color: rgba(255, 255, 255, 0);">ABOUT</span></strong></h6>
 <p><span style="color: rgb(99, 107, 111);">I’m a highly motivated and creative Part II qualified Architectural Assistant who is always looking to expand my horizons. I'm someone who likes to solve problems. Throughout my career, I have been driven by my intellectual curiosity to find answers to the most pressing questions.</span></p>
-<div class="d-flex flex-row" style="margin-top: 10px;"><a class="btn btn-primary d-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center fit-cover rounded-circle" href="{{ url_for('https:', filename='//www.linkedin.com/in/jordanleeharris/') }}" role="button" style="width: 50px;height: 50px;margin-right: 20px;background: rgba(13,110,253,0);border: 2px solid rgb(0,0,0);box-shadow: 0px 0px 6px rgb(0,0,0);"><i class="fab fa-linkedin-in" style="font-size: 30px;width: 30px;color: rgb(0,0,0);"></i></a><a class="btn btn-primary d-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center fit-cover rounded-circle" href="{{ url_for('https:', filename='//github.com/RedLorryYellowDesign') }}" role="button" style="width: 50px;height: 50px;margin-right: 20px;background: rgba(13,110,253,0);border: 2px solid rgb(0,0,0);box-shadow: 0px 0px 6px rgb(0,0,0);"><i class="fab fa-github" style="font-size: 30px;width: 30px;color: rgb(0,0,0);"></i></a><a class="btn btn-primary d-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center fit-cover rounded-circle" href="{{ url_for('tel:07990848268', filename='/') }}" role="button" style="width: 50px;height: 50px;margin-right: 20px;background: rgba(13,110,253,0);border: 2px solid rgb(0,0,0);box-shadow: 0px 0px 6px rgb(0,0,0);"><i class="fas fa-phone-alt" style="font-size: 30px;width: 30px;color: rgb(0,0,0);"></i></a><a class="btn btn-primary d-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center fit-cover rounded-circle" href="{{ url_for('mailto:mr@jordanlharris.com', filename='/') }}" role="button" style="width: 50px;height: 50px;margin-right: 20px;background: rgba(13,110,253,0);border: 2px solid rgb(0,0,0);box-shadow: 0px 0px 6px rgb(0,0,0);"><i class="fas fa-envelope" style="font-size: 30px;width: 30px;color: rgb(0,0,0);"></i></a></div>
+<div class="d-flex flex-row" style="margin-top: 10px;"><button class="btn btn-primary d-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center fit-cover rounded-circle" style="width: 50px;height: 50px;margin-right: 20px;background: rgba(13,110,253,0);border: 2px solid rgb(0,0,0);box-shadow: 0px 0px 6px rgb(0,0,0);" type="button"><i class="fab fa-linkedin-in" style="font-size: 30px;width: 30px;color: rgb(0,0,0);"></i></button><button class="btn btn-primary d-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center fit-cover rounded-circle" style="width: 50px;height: 50px;margin-right: 20px;background: rgba(13,110,253,0);border: 2px solid rgb(0,0,0);box-shadow: 0px 0px 6px rgb(0,0,0);" type="button"><i class="fab fa-github" style="font-size: 30px;width: 30px;color: rgb(0,0,0);"></i></button><button class="btn btn-primary d-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center fit-cover rounded-circle" style="width: 50px;height: 50px;margin-right: 20px;background: rgba(13,110,253,0);border: 2px solid rgb(0,0,0);box-shadow: 0px 0px 6px rgb(0,0,0);" type="button"><i class="fas fa-phone-alt" style="font-size: 30px;width: 30px;color: rgb(0,0,0);"></i></button><button class="btn btn-primary d-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center fit-cover rounded-circle" style="width: 50px;height: 50px;margin-right: 20px;background: rgba(13,110,253,0);border: 2px solid rgb(0,0,0);box-shadow: 0px 0px 6px rgb(0,0,0);" type="button"><i class="fas fa-envelope" style="font-size: 30px;width: 30px;color: rgb(0,0,0);"></i></button></div>
 </div>
 <div class="tab-pane fade" id="employment">
-<div class="d-flex flex-row justify-content-between align-items-center justify-content-xl-start"><img class="shadow fit-cover rounded-circle" src="{{ url_for('static', filename='/img/JH-image.jpg') }}" style="margin-bottom: 20px;margin-right: 20px;" width="20%"/>
-<div>
-<h1 class="d-xxl-flex justify-content-xxl-center"><strong><span style="color: rgb(43, 44, 72);">Jordan Harris</span></strong></h1>
-<h4 class="d-grid d-xxl-flex flex-shrink-1">DESIGNER. DEVELOPER. CREATIVE</h4>
-</div>
-</div>
-<h4 style="background: rgba(255,255,255,0);margin-bottom: 20px;"><strong><span style="color: rgb(43, 44, 72); background-color: rgba(255, 255, 255, 0);">EMPLOYMENT</span></strong></h4>
-<div class="d-flex flex-column">
-<div style="padding: 10px;margin-left: 25px;margin-top: 20px;border-left: 3px solid rgb(33, 37, 41);margin-bottom: 10px;">
-<div class="d-flex flex-row justify-content-center" style="border-radius: 12px;transform: translateX(-40px) translateY(-40px);width: 120px;border: 2px solid rgb(0,0,0);"><span style="color: rgb(0,0,0);font-size: 12px;margin: 5px;">01:2020 - 01:2020</span></div>
-<h5 style="margin-top: -25px;padding-left: 15px;">Systems Architect &amp; Digital Operation Manager</h5>
-<h6 style="padding-left: 15px;">Hale ADM </h6>
-<div class="accordion shadow-none" id="accordion-4" role="tablist" style="margin: -10px;background: rgba(255,255,255,0);border-top-style: none;border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);">
-<div class="accordion-item shadow-none" style="background: rgba(255,255,255,0);border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);border-style: none;border-top-style: none;">
-<h2 class="accordion-header shadow-none" role="tab" style="background: rgba(255,255,255,0);border-top-style: none;border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);"><button aria-controls="accordion-4 .item-1" aria-expanded="true" class="accordion-button shadow-none" data-bs-target="#accordion-4 .item-1" data-bs-toggle="collapse" style="background: rgba(255,255,255,0);border-top-style: none;border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);" type="button">Role Bio</button></h2>
-<div class="accordion-collapse collapse show item-1 shadow-none" data-bs-parent="#accordion-4" role="tabpanel" style="background: rgba(255,255,255,0);border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);border-style: none;border-top-style: none;">
-<div class="accordion-body">
-<p class="mb-0">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-</div>
-</div>
-</div>
-<div class="accordion-item shadow-none" style="background: rgba(255,255,255,0);border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);border-style: none;border-top-style: none;">
-<h2 class="accordion-header shadow-none" role="tab" style="background: rgba(255,255,255,0);border-top-style: none;border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);"><button aria-controls="accordion-4 .item-2" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#accordion-4 .item-2" data-bs-toggle="collapse" style="background: rgba(255,255,255,0);border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);padding-left: 15px;border-style: none;border-top-style: none;" type="button">Key Achievements</button></h2>
-<div class="accordion-collapse collapse item-2 shadow-none" data-bs-parent="#accordion-4" role="tabpanel" style="background: rgba(255,255,255,0);border-top-style: none;border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);">
-<div class="accordion-body">
-<ul style="padding-left: 10px;">
-<li>Item 1</li>
-<li>Item 2</li>
-<li>Item 3</li>
-<li>Item 4</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div style="padding: 10px;margin-left: 25px;margin-top: 20px;border-left: 3px solid rgb(33, 37, 41);margin-bottom: 10px;">
-<div class="d-flex flex-row justify-content-center" style="border-radius: 12px;transform: translateX(-40px) translateY(-40px);width: 120px;border: 2px solid rgb(0,0,0);"><span style="color: rgb(0,0,0);font-size: 12px;margin: 5px;">01:2020 - 01:2020</span></div>
-<h5 style="margin-top: -25px;padding-left: 15px;">Architectural Designer</h5>
-<h6 style="padding-left: 15px;">Hale ADM </h6>
-<div class="accordion shadow-none" id="accordion-5" role="tablist" style="margin: -10px;background: rgba(255,255,255,0);border-top-style: none;border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);">
-<div class="accordion-item shadow-none" style="background: rgba(255,255,255,0);border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);border-style: none;border-top-style: none;">
-<h2 class="accordion-header shadow-none" role="tab" style="background: rgba(255,255,255,0);border-top-style: none;border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);"><button aria-controls="accordion-5 .item-1" aria-expanded="true" class="accordion-button shadow-none" data-bs-target="#accordion-5 .item-1" data-bs-toggle="collapse" style="background: rgba(255,255,255,0);border-top-style: none;border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);" type="button">Role Bio</button></h2>
-<div class="accordion-collapse collapse show item-1 shadow-none" data-bs-parent="#accordion-5" role="tabpanel" style="background: rgba(255,255,255,0);border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);border-style: none;border-top-style: none;">
-<div class="accordion-body">
-<p class="mb-0">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-</div>
-</div>
-</div>
-<div class="accordion-item shadow-none" style="background: rgba(255,255,255,0);border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);border-style: none;border-top-style: none;">
-<h2 class="accordion-header shadow-none" role="tab" style="background: rgba(255,255,255,0);border-top-style: none;border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);"><button aria-controls="accordion-5 .item-2" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#accordion-5 .item-2" data-bs-toggle="collapse" style="background: rgba(255,255,255,0);border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);padding-left: 15px;border-style: none;border-top-style: none;" type="button">Key Achievements</button></h2>
-<div class="accordion-collapse collapse item-2 shadow-none" data-bs-parent="#accordion-5" role="tabpanel" style="background: rgba(255,255,255,0);border-top-style: none;border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);">
-<div class="accordion-body">
-<ul style="padding-left: 10px;">
-<li>Item 1</li>
-<li>Item 2</li>
-<li>Item 3</li>
-<li>Item 4</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div style="padding: 10px;margin-left: 25px;margin-top: 20px;border-left: 3px solid rgb(33, 37, 41);margin-bottom: 10px;">
-<div class="d-flex flex-row justify-content-center" style="border-radius: 12px;transform: translateX(-40px) translateY(-40px);width: 120px;border: 2px solid rgb(0,0,0);"><span style="color: rgb(0,0,0);font-size: 12px;margin: 5px;">01:2020 - 01:2020</span></div>
-<h5 style="margin-top: -25px;padding-left: 15px;">Architectural Assistant </h5>
-<h6 style="padding-left: 15px;">Hale ADM </h6>
-<div class="accordion shadow-none" id="accordion-6" role="tablist" style="margin: -10px;background: rgba(255,255,255,0);border-top-style: none;border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);">
-<div class="accordion-item shadow-none" style="background: rgba(255,255,255,0);border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);border-style: none;border-top-style: none;">
-<h2 class="accordion-header shadow-none" role="tab" style="background: rgba(255,255,255,0);border-top-style: none;border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);"><button aria-controls="accordion-6 .item-1" aria-expanded="true" class="accordion-button shadow-none" data-bs-target="#accordion-6 .item-1" data-bs-toggle="collapse" style="background: rgba(255,255,255,0);border-top-style: none;border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);" type="button">Role Bio</button></h2>
-<div class="accordion-collapse collapse show item-1 shadow-none" data-bs-parent="#accordion-6" role="tabpanel" style="background: rgba(255,255,255,0);border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);border-style: none;border-top-style: none;">
-<div class="accordion-body">
-<p class="mb-0">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-</div>
-</div>
-</div>
-<div class="accordion-item shadow-none" style="background: rgba(255,255,255,0);border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);border-style: none;border-top-style: none;">
-<h2 class="accordion-header shadow-none" role="tab" style="background: rgba(255,255,255,0);border-top-style: none;border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);"><button aria-controls="accordion-6 .item-2" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#accordion-6 .item-2" data-bs-toggle="collapse" style="background: rgba(255,255,255,0);border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);padding-left: 15px;border-style: none;border-top-style: none;" type="button"></button></h2>
-<div class="accordion-collapse collapse item-2 shadow-none" data-bs-parent="#accordion-6" role="tabpanel" style="background: rgba(255,255,255,0);border-top-style: none;border-radius: 0px;backdrop-filter: opacity(1);-webkit-backdrop-filter: opacity(1);">
-<div class="accordion-body">
-<ul style="padding-left: 10px;">
-<li>Item 1</li>
-<li>Item 2</li>
-<li>Item 3</li>
-<li>Item 4</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="tab-pane fade" id="education">
 <div class="d-flex flex-row justify-content-between align-items-center justify-content-xl-start"><img class="shadow fit-cover rounded-circle" src="{{ url_for('static', filename='/img/JH-image.jpg') }}" style="margin-bottom: 20px;margin-right: 20px;" width="20%"/>
 <div>
 <h1 class="d-xxl-flex justify-content-xxl-center"><strong><span style="color: rgb(43, 44, 72);">Jordan Harris</span></strong></h1>
@@ -223,7 +122,17 @@
 </div>
 </div>
 </div>
-<div class="tab-pane show active" id="contact">
+<div class="tab-pane fade" id="education">
+<div class="d-flex flex-row justify-content-between align-items-center justify-content-xl-start"><img class="shadow fit-cover rounded-circle" src="{{ url_for('static', filename='/img/JH-image.jpg') }}" style="margin-bottom: 20px;margin-right: 20px;" width="20%"/>
+<div>
+<h1 class="d-xxl-flex justify-content-xxl-center"><strong><span style="color: rgb(43, 44, 72);">Jordan Harris</span></strong></h1>
+<h4 class="d-xxl-flex">DESIGNER. DEVELOPER. CREATIVE</h4>
+</div>
+</div>
+<h4><strong><span style="color: rgb(43, 44, 72); background-color: rgba(255, 255, 255, 0);">ABOUT</span></strong></h4>
+<p><span style="color: rgb(99, 107, 111);">I’m a highly motivated and creative Part II qualified Architectural Assistant who is always looking to expand my horizons. I'm someone who likes to solve problems. Throughout my career, I have been driven by my intellectual curiosity to find answers to the most pressing questions.</span></p><button class="btn btn-primary" type="button">Button</button>
+</div>
+<div class="tab-pane" id="contact">
 <div class="d-flex flex-row justify-content-between align-items-center justify-content-xl-start"><img class="shadow fit-cover rounded-circle" src="{{ url_for('static', filename='/img/JH-image.jpg') }}" style="margin-bottom: 20px;margin-right: 20px;" width="20%"/>
 <div>
 <h1 class="d-xxl-flex justify-content-xxl-center"><strong><span style="color: rgb(43, 44, 72);">Jordan Harris</span></strong></h1>
@@ -269,15 +178,7 @@
 </div>
 </div>
 </div>
-<div class="card-header d-flex d-sm-none d-md-none flex-row flex-shrink-1 justify-content-evenly align-items-center align-content-center justify-content-md-center align-items-md-center" style="background: rgba(255,255,255,0.4);padding: 10px;border-radius: 21px;border: 3px solid rgb(0,0,0);box-shadow: 0px 0px 20px;">
-<ul class="nav nav-tabs card-header-tabs d-flex d-xxl-flex justify-content-center justify-content-xxl-center">
-<li class="nav-item" style="transform: rotate(0deg);"><a class="nav-link active" data-bs-toggle="tab" href="#about" style="margin: 0px;border-radius: 10px;border-width: 0px;padding: 6px;font-size: 12px;">ABOUT</a></li>
-<li class="nav-item" style="transform: rotate(0deg);"><a class="nav-link" data-bs-toggle="tab" href="#employment" style="margin: 0px;border-width: 0px;border-radius: 10px;padding: 6px;font-size: 12px;">EMPLYMENT</a></li>
-<li class="nav-item" style="transform: rotate(0deg);"><a class="nav-link" data-bs-toggle="tab" href="#education" style="border-radius: 10px;border-top-right-radius: 12px;border-top-left-radius: 12px;margin-bottom: 0px;border-width: 0px;padding: 6px;font-size: 12px;">EDUCATION</a></li>
-<li class="nav-item" style="transform: rotate(0deg);"><a class="nav-link" data-bs-toggle="tab" href="#contact" style="border-width: 0px;border-radius: 10px;margin: 0px;padding: 6px;font-size: 12px;">CONTACT</a></li>
-</ul>
-</div>
-<div class="card-header d-none d-sm-flex d-md-flex flex-row flex-shrink-1 justify-content-evenly align-items-center align-content-center justify-content-md-center align-items-md-center" style="background: rgba(255,255,255,0.4);padding: 10px;border-radius: 21px;border: 3px solid rgb(0,0,0);box-shadow: 0px 0px 20px;">
+<div class="card-header d-flex flex-row flex-shrink-1 justify-content-evenly align-items-center align-content-center justify-content-md-center align-items-md-center" style="background: rgba(255,255,255,0.4);padding: 10px;border-radius: 21px;border: 3px solid rgb(0,0,0);">
 <ul class="nav nav-tabs card-header-tabs d-flex d-xxl-flex justify-content-center justify-content-xxl-center">
 <li class="nav-item" style="transform: rotate(0deg);"><a class="nav-link active" data-bs-toggle="tab" href="#about" style="margin: 0px;border-radius: 10px;border-width: 0px;padding: 6px;">ABOUT</a></li>
 <li class="nav-item" style="transform: rotate(0deg);"><a class="nav-link" data-bs-toggle="tab" href="#employment" style="margin: 0px;border-width: 0px;border-radius: 10px;padding: 6px;">EMPLYMENT</a></li>
@@ -286,6 +187,7 @@
 </ul>
 </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
