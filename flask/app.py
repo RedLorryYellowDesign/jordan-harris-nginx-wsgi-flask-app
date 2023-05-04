@@ -1,8 +1,6 @@
 import os
 from flask import Flask, url_for, redirect, render_template, request
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import desc
-
 from wtforms import form, fields, validators
 import flask_admin as admin
 import flask_login as login
@@ -10,7 +8,6 @@ from flask_admin.contrib import sqla
 from flask_admin import helpers, expose
 from werkzeug.security import generate_password_hash, check_password_hash
 # from admin import admin
-
 
 # Create Flask application
 app = Flask(__name__)
@@ -52,7 +49,6 @@ class User(db.Model):
     # Required for administrative interface
     def __unicode__(self):
         return self.username
-
 
 # Define login and registration forms (for flask-login)
 class LoginForm(form.Form):
@@ -171,21 +167,6 @@ class MyInfo(db.Model):
     my_overview = db.Column(db.Text, nullable=True)
     more_indepth = db.Column(db.Text, nullable=True)
 
-    def __repr__(self):
-        return f"MyInfo('{self.phone}')"
-
-class InternshipMentoring(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    employer = db.Column(db.String(100), unique=False, nullable=True)
-    role = db.Column(db.String(500), unique=False, nullable=True)
-    role_bio = db.Column(db.Text, nullable=True)
-    key_points = db.Column(db.Text, nullable=True)
-    year_of_study = db.Column(db.Integer, nullable=True)
-    year_of_start = db.Column(db.Integer, nullable=True)
-
-    def __repr__(self):
-        return f"InternshipMentoring('{self.employer}','{self.role}')"
-
 
 class Education(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -196,8 +177,6 @@ class Education(db.Model):
     year_of_study = db.Column(db.Integer, nullable=True)
     year_of_start = db.Column(db.Integer, nullable=True)
 
-    def __repr__(self):
-        return f"Education('{self.school}','{self.course}')"
 
 class Employment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -207,9 +186,6 @@ class Employment(db.Model):
     key_points = db.Column(db.Text, nullable=True)
     year_of_study = db.Column(db.Integer, nullable=True)
     year_of_start = db.Column(db.Integer, nullable=True)
-
-    def __repr__(self):
-        return f"Employment('{self.employer}','{self.role}')"
 
 
 class Certifications(db.Model):
@@ -223,10 +199,6 @@ class Projects(db.Model):
     project_name = db.Column(db.String(100), unique=False, nullable=False)
     image_file = db.Column(db.String(20), unique=False, nullable=False, default='default.jpg')
     about = db.Column(db.Text, unique=False, nullable=True)
-
-
-    def __repr__(self):
-        return f"Projects('{self.project_name}')"
 
 
 # Flask views
@@ -249,9 +221,7 @@ admin.add_view(MyModelView(Education, db.session))
 admin.add_view(MyModelView(Projects, db.session))
 admin.add_view(MyModelView(Employment, db.session))
 admin.add_view(MyModelView(MyInfo, db.session))
-admin.add_view(MyModelView(InternshipMentoring, db.session))
-admin.add_view(MyModelView(Certifications
-, db.session))
+admin.add_view(MyModelView(Certifications, db.session))
 
 @app.route('/build', methods=('GET', 'POST'))
 def build_sample_db():
@@ -282,7 +252,6 @@ def build_sample_db():
     # make Employment -- Hash out once built
     my_bio = MyInfo(email="test")
     db.session.add(my_bio)
-
 
     db.session.commit()
     return "pingpong"
