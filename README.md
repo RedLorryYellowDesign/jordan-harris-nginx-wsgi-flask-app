@@ -9,6 +9,12 @@ Project structure:
 ├── compose.yaml
 ├── flask
 │   ├── app.py
+│   ├── templates
+│   │   ├── base.html
+│   │   ├── index.html
+│   │   ├── projects.html
+│   │   └── admin
+│   │   |   └── index.html
 │   ├── Dockerfile
 │   ├── requirements.txt
 │   └── wsgi.py

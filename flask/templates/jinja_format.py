@@ -1,3 +1,4 @@
+import re
 from bs4 import BeautifulSoup
 
 # Open the original HTML file
@@ -8,37 +9,34 @@ with open('index.html', 'r') as f:
 soup = BeautifulSoup(html, 'html.parser')
 
 # Find all links, scripts, and images in the HTML
-for link in soup.find_all(['a', 'link']):
+for element in soup.find_all(['a', 'link', 'script', 'img']):
+    if 'href' in element.attrs and element['href'].startswith(('http', 'https')):
+        element['href'] = "{{ '" + element['href'] + "' }}"
+    elif 'src' in element.attrs and element['src'].startswith(('http', 'https')):
+        element['src'] = "{{ '" + element['src'] + "' }}"
+
     # Replace the href attribute with a Jinja2-compatible syntax
-    if 'href' in link.attrs:
-        if not link['href'].startswith('#'):
-            href = link['href'].split('/')
+    elif 'href' in element.attrs:
+        if not element['href'].startswith('#'):
+            href = element['href'].split('/')
             href_path = '/'.join(href[1:])
-            link['href'] = "{{ url_for('" + href[0] + "', filename='/" + href_path + "') }}"
+            element['href'] = "{{ url_for('" + href[0] + "', filename='/" + href_path + "') }}"
 
-for script in soup.find_all('script'):
     # Replace the src attribute or script content with a Jinja2-compatible syntax
-    if 'src' in script.attrs:
-        if not script['src'].startswith('#'):
-          script_src = script['src'].split('/')
-          script_src_path = '/'.join(script_src[1:])
-          script['src'] = "{{ url_for('" + script_src[0] + "', filename='/" + script_src_path + "') }}"
+    elif element.name == 'script' and element.string:
+        element.string = "{{ " + element.string.strip() + " }}"
 
-          #script['src'] = "{{ url_for('static', filename='/" + script['src'] + "') }}"
-    else:
-        script.string = "{{ " + script.string.strip() + " }}"
+    elif 'src' in element.attrs:
+        if not element['src'].startswith('#'):
+            script_src = element['src'].split('/')
+            script_src_path = '/'.join(script_src[1:])
+            element['src'] = "{{ url_for('" + script_src[0] + "', filename='/" + script_src_path + "') }}"
 
-for img in soup.find_all('img'):
-    # Replace the src attribute with a Jinja2-compatible syntax
-    img_src = img['src'].split('/')
-    img_src_path = '/'.join(img_src[1:])
-    img['src'] = "{{ url_for('" + img_src[0] + "', filename='/" + img_src_path + "') }}"
-
-
-
-    #img['src'] = "{{ url_for('static', filename='/" + img['src'] + "') }}"
-
+# Check for double curly braces
+modified_html = str(soup)
+if re.search(r'{{\s*url_for\(\'{{\s*url_for\(', modified_html):
+    raise ValueError("Double curly braces detected: {{ url_for('{{ url_for(...) }}'")
 
 # Export the modified HTML to a new file
 with open('index.html', 'w') as f:
-    f.write(str(soup))
+    f.write(modified_html)

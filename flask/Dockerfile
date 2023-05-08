@@ -1,9 +1,7 @@
 FROM python:3.11-alpine
 
-
 # upgrade pip
 RUN pip install --upgrade pip
-
 
 # get curl for healthchecks
 RUN apk add curl
