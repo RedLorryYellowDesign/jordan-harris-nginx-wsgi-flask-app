@@ -7,7 +7,6 @@ import flask_login as login
 from flask_admin.contrib import sqla
 from flask_admin import helpers, expose
 from werkzeug.security import generate_password_hash, check_password_hash
-# from admin import admin
 
 # Create Flask application
 app = Flask(__name__)
