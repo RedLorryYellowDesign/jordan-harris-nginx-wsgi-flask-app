@@ -206,13 +206,16 @@ def index():
     education = Education
     employment = Employment
     myinfo = MyInfo
-    return render_template('index.html',education = education.query.all(),myinfo = myinfo.query.all(), employment = employment.query.all())
+    return render_template('index.html')
+
+    #return render_template('index.html',education = education.query.all(),myinfo = myinfo.query.all(),employment = employment.query.all())
 
 # Initialize flask-login
 init_login()
 
 # Create admin
-admin = admin.Admin(app, 'Example: Auth', index_view=MyAdminIndexView(), base_template='my_master.html', template_mode='bootstrap4')
+admin = admin.Admin(app, 'Example: Auth', index_view=MyAdminIndexView(),
+                    base_template='my_master.html', template_mode='bootstrap4')
 
 # Add view
 admin.add_view(MyModelView(User, db.session))
