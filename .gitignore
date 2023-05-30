@@ -1,5 +1,6 @@
-# ignore ALL .log files
+# Ignore ALL .log files
 *.log
-
-#
+# Ignore ALL .env files
+*.env
+# Ignore the folder design -- Used for development and testing locally.
 /design

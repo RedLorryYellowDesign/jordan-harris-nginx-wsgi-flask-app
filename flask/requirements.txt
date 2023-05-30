@@ -1,6 +1,24 @@
-# flask_bootstrap
+flask_bootstrap
 Flask
 gunicorn
+python-dotenv
 Flask-Admin
 Flask-SQLAlchemy
+sqlalchemy
 Flask-Login>=0.3.0
+markupsafe
+wtforms
+flask_login
+
+
+# Flask
+# Flask-Admin
+# Flask-SQLAlchemy
+# Flask-Login>=0.3.0
+# tablib
+# enum34; python_version < '3.0'
+# sqlalchemy_utils
+# arrow
+# colour
+# email_validator
+# pillow
