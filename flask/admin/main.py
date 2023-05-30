@@ -13,7 +13,7 @@ def index_static():
     employment = Employment
     projects = Projects
 
-    return render_template('index.html',
+    return render_template('index_static.html',
                             myinfo = myinfo.query.all(),
                             education = education.query.all(),
                             employment = employment.query.all(),
@@ -32,7 +32,7 @@ def index():
 
 
 
-    return render_template('index_test.html',
+    return render_template('index.html',
                             myinfo = myinfo.query.all(),
                             education = education.query.all(),
                             employment = employment.query.all(),

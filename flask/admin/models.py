@@ -249,7 +249,7 @@ class Projects(db.Model):
     about = db.Column(db.Text, unique=False, nullable=True)
 
     def __unicode__(self):
-        return self.name
+        return self.project_name
 
 
 
