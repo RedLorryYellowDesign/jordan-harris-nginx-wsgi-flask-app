@@ -132,8 +132,7 @@ class MyAdminIndexView(admin.AdminIndexView):
 
             login.login_user(user)
             return redirect(url_for('.index'))
-        link = '<p>Already have an account? <a href="' + url_for('.login_view'),
-        + '">Click here to log in.</a></p>'
+        link = '<p>Already have an account? <a href="' + url_for('.login_view') + '">Click here to log in.</a></p>'
         self._template_args['form'] = form
         self._template_args['link'] = link
         return super(MyAdminIndexView, self).index()
@@ -143,13 +142,7 @@ class MyAdminIndexView(admin.AdminIndexView):
         login.logout_user()
         return redirect(url_for('.index'))
 
-    @expose('/update_db/')
-    def logout_view(self):
-        return redirect(url_for('.index'))
-
-
 # Main Classes for app
-
 class Navigation(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80), unique=True)
