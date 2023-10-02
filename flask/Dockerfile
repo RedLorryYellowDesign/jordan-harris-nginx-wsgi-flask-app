@@ -29,6 +29,6 @@ RUN pip install -r requirements.txt
 # define the port number the container should expose
 EXPOSE 5000
 
-# RUN gunicorn --bind 0.0.0.0:8000 wsgi:app
+# RUN gunicorn --bind 0.0.0.0:8100 wsgi:app
 
 CMD ["python3", "wsgi.py",]
