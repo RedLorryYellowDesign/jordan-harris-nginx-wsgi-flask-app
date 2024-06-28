@@ -30,8 +30,6 @@ class User(db.Model):
     login = db.Column(db.String(80), unique=True)
     email = db.Column(db.String(120))
     password = db.Column(db.String(64))
-
-
     # Flask-Login integration
     # NOTE: is_authenticated, is_active, and is_anonymous
     # are methods in Flask-Login < 0.3.0

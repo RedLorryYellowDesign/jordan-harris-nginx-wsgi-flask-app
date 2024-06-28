@@ -16,17 +16,17 @@ from flask_admin import helpers, expose
 from werkzeug.security import generate_password_hash, check_password_hash
 from wtforms import fields, validators, widgets, form
 
-# Create directory for file fields to use
-file_path = op.join(op.dirname(__file__), 'static/files')
-try:
-    os.mkdir(file_path)
-except OSError:
-    pass
+from models import *
 
-class Image(db.Model):
+
+
+class Certifications(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.Unicode(64))
-    path = db.Column(db.Unicode(128))
+    cert_name = db.Column(db.String(100), unique=False, nullable=False)
+    year_of_start = db.Column(db.String(100), unique=False, nullable=True)
+    year_of_finish = db.Column(db.String(100), unique=False, nullable=True)
+    cert_link = db.Column(db.String(100), unique=False, nullable=True)
+    cert_provider = db.Column(db.String(100), unique=False, nullable=True)
 
     def __unicode__(self):
         return self.name

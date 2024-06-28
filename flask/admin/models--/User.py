@@ -23,7 +23,6 @@ class User(db.Model):
     email = db.Column(db.String(120))
     password = db.Column(db.String(64))
 
-
     # Flask-Login integration
     # NOTE: is_authenticated, is_active, and is_anonymous
     # are methods in Flask-Login < 0.3.0
@@ -44,24 +43,4 @@ class User(db.Model):
 
     # Required for administrative interface
     def __unicode__(self):
-        return self.username
-
-# Define login and registration forms (for flask-login)
-class LoginForm(form.Form):
-    login = fields.StringField(validators=[validators.InputRequired()])
-    password = fields.PasswordField(validators=[validators.InputRequired()])
-
-    def validate_login(self, field):
-        user = self.get_user()
-
-        if user is None:
-            raise validators.ValidationError('Invalid user')
-
-        # we're comparing the plaintext pw with the the hash from the db
-        if not check_password_hash(user.password, self.password.data):
-        # to compare plain text passwords use
-        # if user.password != self.password.data:
-            raise validators.ValidationError('Invalid password')
-
-    def get_user(self):
-        return db.session.query(User).filter_by(login=self.login.data).first()
+        return self.login

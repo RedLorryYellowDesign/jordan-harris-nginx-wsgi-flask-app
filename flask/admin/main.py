@@ -4,7 +4,6 @@ from admin.models import *  #MyAdminIndexView, MyModelView, RegistrationForm, Lo
 from flask import render_template
 import flask_login as login
 
-
 # Flask views
 @app.route('/static', methods=('GET', 'POST'))
 def index_static():

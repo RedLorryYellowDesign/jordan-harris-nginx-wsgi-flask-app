@@ -33,58 +33,39 @@
         <li class="nav-item"><a class="nav-link" href="#">data science&nbsp;</a></li>
         <li class="nav-item"><a class="nav-link" href="#">web development</a></li>
     </ul>
+
+
+    <!--  FILTER -->
+    <!--
+    {{ let catagory = seleted_catagory }}
+
+    {% if seletion =! show_all %}
+      {% for projects in projects.catagory %}
+
+      {% endfor %}
+    {% else %}
+      {% for projects in projects %}
+
+      {% endfor %}
+    {% endif %}
+    -->
+
     <div class="container">
+
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-4">
             <div class="col">
+              {% for projects in projects %}
                 <ul class="list-group"></ul>
                 <div class="border rounded-0 border-1 border-dark shadow" style="font-size: 14px;padding: 8px;"><img src="assets/img/projects/Team_Energy_Logo.png" style="width: 100%;margin-top: 20px;border-radius: 30px;" loading="auto">
-                    <h6 class="text-capitalize" style="margin: 0px;margin-top: 10px;margin-bottom: 10px;"><span style="color: rgba(0, 0, 0, 0.9);">Energy.app</span></h6>
-                    <p>A Machine learning tool to predict household energy use based on demographics.</p>
+                    <h6 class="text-capitalize" style="margin: 0px;margin-top: 10px;margin-bottom: 10px;"><span style="color: rgba(0, 0, 0, 0.9);">{{projects.project_name}}</span></h6>
+                    <p>{{projects.project_name}}</p>
                     <div></div>
                     <div style="font-size: 14px;">
                         <div style="font-size: 14px;"><button class="btn btn-primary link-primary d-md-flex justify-content-md-start" type="button" data-bs-target="#hale_off" data-bs-toggle="offcanvas" style="width: 100%;background: rgba(0,0,0,0);border-radius: 0px;padding: 0px;border-style: hidden;font-size: 14px;">See More&nbsp;</button></div>
                     </div>
-                    <div></div>
                 </div>
             </div>
-            <div class="col">
-                <ul class="list-group"></ul>
-                <div class="border rounded-0 border-1 border-dark shadow" style="font-size: 14px;padding: 8px;"><img src="assets/img/Subject.png" style="width: 100%;margin-top: 20px;border-radius: 30px;" loading="auto">
-                    <h6 class="text-capitalize" style="margin: 0px;margin-top: 10px;margin-bottom: 10px;"><span style="color: rgba(0, 0, 0, 0.9);">jordanlharris.com</span></h6>
-                    <p>my Personal website to show my skillset and experience&nbsp;</p>
-                    <div></div>
-                    <div style="font-size: 14px;">
-                        <div style="font-size: 14px;"><button class="btn btn-primary link-primary d-md-flex justify-content-md-start" type="button" data-bs-target="#hale_off" data-bs-toggle="offcanvas" style="width: 100%;background: rgba(0,0,0,0);border-radius: 0px;padding: 0px;border-style: hidden;font-size: 14px;">See More&nbsp;</button></div>
-                    </div>
-                    <div></div>
-                </div>
-            </div>
-            <div class="col">
-                <ul class="list-group"></ul>
-                <div class="border rounded-0 border-1 border-dark shadow" style="font-size: 14px;padding: 8px;"><img src="assets/img/Subject.png" style="width: 100%;margin-top: 20px;border-radius: 30px;" loading="auto">
-                    <h6 class="text-capitalize" style="margin: 0px;margin-top: 10px;margin-bottom: 10px;"><span style="color: rgba(0, 0, 0, 0.9);">Kent School of Medicine&nbsp;&nbsp;</span></h6>
-                    <p>Kents first medical school&nbsp;</p>
-                    <div></div>
-                    <div style="font-size: 14px;">
-                        <div style="font-size: 14px;"><button class="btn btn-primary link-primary d-md-flex justify-content-md-start" type="button" data-bs-target="#hale_off" data-bs-toggle="offcanvas" style="width: 100%;background: rgba(0,0,0,0);border-radius: 0px;padding: 0px;border-style: hidden;font-size: 14px;">See More&nbsp;</button></div>
-                    </div>
-                    <div></div>
-                </div>
-            </div>
-            <div class="col">
-                <ul class="list-group"></ul>
-                <div class="border rounded-0 border-1 border-dark shadow" style="font-size: 14px;padding: 8px;"><img src="assets/img/Subject.png" style="width: 100%;margin-top: 20px;border-radius: 30px;" loading="auto">
-                    <h6 class="text-capitalize" style="margin: 0px;margin-top: 10px;margin-bottom: 10px;"><span style="color: rgba(0, 0, 0, 0.9);">The Pangolin Project&nbsp;</span></h6>
-                    <p>Kents first medical school&nbsp;</p>
-                    <div></div>
-                    <div style="font-size: 14px;">
-                        <div style="font-size: 14px;"><button class="btn btn-primary link-primary d-md-flex justify-content-md-start" type="button" data-bs-target="#hale_off" data-bs-toggle="offcanvas" style="width: 100%;background: rgba(0,0,0,0);border-radius: 0px;padding: 0px;border-style: hidden;font-size: 14px;">See More&nbsp;</button></div>
-                    </div>
-                    <div></div>
-                </div>
-            </div>
-        </div>
-    </div>
+            {% endfor %}
     <hr style="margin-top: 30px;"><!-- Start: Footer Clean -->
     <footer class="text-center d-lg-flex py-4 bottom-0" position="absolute" style="position: relative;">
         <div class="container">
